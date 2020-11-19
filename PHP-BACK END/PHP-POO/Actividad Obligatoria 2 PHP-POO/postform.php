@@ -1,3 +1,10 @@
+<?php
+
+$usuario=$_POST['usuario'];
+$clave=$_POST['clave'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   
     <style>
-        body{ margin: 0;
+        body{ 
+        margin: 0;
         height: 100vh;
         display: flex;        
         justify-content: center;
@@ -19,40 +27,43 @@
     form{
         margin-top: 10px;
         width: 500px;  
-        height: 350px;
+        height: 400px;
         background-color: rgb(233, 233, 233);
         border-radius: 10px;
+    }
+    h5{
+        color: red;
+    }
+    mark{
+        background-color: green;
+        color: white;
     }
 
     </style>
   
-    <title>Formulario PHP</title>
+    <title>Formulario en PHP</title>
 </head>
 <body>
 
-    
-
     <div >
-        <form >
+        <form method="POST" action="postform.php">
             <br>
-            <h3>Plataforma Cloud</h3>
-            <p>Bienvenido! Ingresá tus datos de acceso</p>
+            <h3>Bienvenido a Sistema</h3>
             <div class="form-group ml-5 mr-5">
-              <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Tu usuario en el sistema">
+                <br>
+                <p> <mark> Los datos ingresados son: </mark> </p>
             </div>
             <div class="form-group ml-5 mr-5">
-              <input type="password" class="form-control"  placeholder="Tu Clave / Password">
+                <br>
+             <h5>Tu Usuario: <?php echo $usuario ; ?> </h5>
             </div>
             <div class="form-group ml-5 mr-5">
-            <button type="submit" class="form-control btn btn-primary">Ingresar</button>
-            <br>
-            <p class="text-right">Registrate Gratis!</p>
-            <p class="text-right text-danger">Olvidé mi clave</p>
+                <br>
+                <h5>Tu Clave: <?php echo $clave ; ?> </h5>
+                <br>
             </div>
           </form>
-    </div>
-
-  
+    </div>  
     
 </body>
 </html>
